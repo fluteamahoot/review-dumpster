@@ -10,6 +10,9 @@ class Publisher(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return "%s" % (self.name)
+
 
 class Media(models.Model):
     title = models.CharField(max_length=255)
@@ -19,6 +22,9 @@ class Media(models.Model):
 
     created = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return "%s (%s)" % (self.title, self.release)
 
 
 class Review(models.Model):
@@ -35,3 +41,6 @@ class Review(models.Model):
 
     created = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return "[%s] %s <%s>" % (self.media, self.title, self.author.name)
