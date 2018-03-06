@@ -23,6 +23,7 @@ build
 # Environment
 local.env
 /venv/
+/public/
 
 # Django stuff:
 *.mo

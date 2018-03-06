@@ -13,7 +13,8 @@ from os.path import dirname, join, exists
 # Build paths inside the project like this: join(BASE_DIR, "directory")
 BASE_DIR = dirname(dirname(dirname(__file__)))
 STATICFILES_DIRS = [join(BASE_DIR, 'static')]
-MEDIA_ROOT = join(BASE_DIR, 'media')
+STATIC_ROOT = join(BASE_DIR, '..', 'public', 'static')
+MEDIA_ROOT = join(BASE_DIR, '..', 'public', 'media')
 MEDIA_URL = "/media/"
 
 # Use Django templates using the new Django 1.8 TEMPLATES settings
@@ -74,9 +75,11 @@ INSTALLED_APPS = (
     'authtools',
     'crispy_forms',
     'easy_thumbnails',
+    'ckeditor',
 
     'profiles',
     'accounts',
+    'reviews',
 
 )
 
