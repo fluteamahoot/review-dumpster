@@ -20,8 +20,9 @@ build
 # Logs:
 *.log
 
-# Environment variables
+# Environment
 local.env
+/venv/
 
 # Django stuff:
 *.mo
