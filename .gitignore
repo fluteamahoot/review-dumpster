@@ -23,7 +23,9 @@ build
 # Environment
 local.env
 /venv/
-/public/
+/public/static
+/public/media/*
+!/public/media/default_profile.png
 
 # Django stuff:
 *.mo
