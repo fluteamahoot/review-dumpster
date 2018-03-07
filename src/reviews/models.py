@@ -14,9 +14,20 @@ class Publisher(models.Model):
         return "%s" % (self.name)
 
 
+class Category(models.Model):
+    class Meta():
+        verbose_name_plural = "Categories"
+
+    name = models.CharField(max_length=255)
+
+
 class Media(models.Model):
+    class Meta():
+        verbose_name_plural = "Media"
+
     title = models.CharField(max_length=255)
     publisher = models.ForeignKey(Publisher)
+    category = models.ForeignKey(Category)
 
     release = models.DateField(blank=True, null=True)
 
