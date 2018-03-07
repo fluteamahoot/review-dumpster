@@ -28,6 +28,6 @@ class PublisherAdmin(admin.ModelAdmin):
 
 
 @admin.register(models.Category)
-class PublisherAdmin(admin.ModelAdmin):
+class CategoryAdmin(admin.ModelAdmin):
     exclude = ['created', 'last_modified']
     list_display = ['name', 'count', 'created', 'last_modified']
