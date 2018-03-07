@@ -4,6 +4,8 @@ python:
 install:
   - pip install -r requirements.txt
   - cd src
+  - echo "DATABASE_URL=sqlite:///db.sqlite3" >> Review/settings/local.env
+  - python -c "import string, random; uni = string.ascii_letters + string.digits + string.punctuation; print('\nSECRET_KEY='+repr(''.join([random.SystemRandom().choice(uni) for i in range(random.randint(45, 50))])))" >> Review/settings/local.env
   - python manage.py migrate
 script:
   - python manage.py test profiles
