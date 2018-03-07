@@ -20,6 +20,9 @@ class Category(models.Model):
 
     name = models.CharField(max_length=255)
 
+    created = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
+
 
 class Media(models.Model):
     class Meta():

@@ -25,3 +25,6 @@ class MediaAdmin(admin.ModelAdmin):
 class PublisherAdmin(admin.ModelAdmin):
     exclude = ['created', 'last_modified']
     list_display = ['name', 'last_modified']
+
+
+admin.site.register(models.Category)
