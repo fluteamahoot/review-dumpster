@@ -23,6 +23,13 @@ class Category(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 
+    @property
+    def count(self):
+        return self.media_set.count()
+
+    def __str__(self):
+        return "%s" % (self.name)
+
 
 class Media(models.Model):
     class Meta():
@@ -39,7 +46,7 @@ class Media(models.Model):
 
     @property
     def verdict(self):
-        return "%s%%" % (self.review_set.aggregate(models.Avg('verdict'))['verdict__avg'])
+        self.review_set.aggregate(models.Avg('verdict'))['verdict__avg']
 
     def __str__(self):
         return "%s (%s)" % (self.title, self.release)
