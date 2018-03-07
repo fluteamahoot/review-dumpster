@@ -1,4 +1,7 @@
 [![Build Status](https://travis-ci.org/fluteamahoot/review-dumpster.svg?branch=master)](https://travis-ci.org/fluteamahoot/review-dumpster)
+[![Code Health](https://landscape.io/github/fluteamahoot/review-dumpster/master/landscape.svg?style=flat)](https://landscape.io/github/fluteamahoot/review-dumpster/master)
+[![Coverage Status](https://coveralls.io/repos/github/fluteamahoot/review-dumpster/badge.svg?branch=master)](https://coveralls.io/github/fluteamahoot/review-dumpster?branch=master)
+
 
 # Review
 
