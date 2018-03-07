@@ -23,6 +23,10 @@ class Media(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 
+    @property
+    def verdict(self):
+        return "%s%%" % (self.review_set.aggregate(models.Avg('verdict'))['verdict__avg'])
+
     def __str__(self):
         return "%s (%s)" % (self.title, self.release)
 
@@ -34,9 +38,9 @@ class Review(models.Model):
     title = models.CharField(max_length=255)
     body = RichTextField()
     verdict = models.IntegerField(default=0, choices=(
-        (1, 'Yay'),
-        (0, 'Meh'),
-        (-1, 'Nah'),
+        (100, 'Yay'),
+        (50, 'Meh'),
+        (0, 'Nah'),
     ))
 
     created = models.DateTimeField(auto_now_add=True)

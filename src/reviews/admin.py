@@ -15,5 +15,13 @@ class ReviewAdmin(admin.ModelAdmin):
     list_display = ['author', 'media', 'title', 'verdict', 'created', 'last_modified']
 
 
-admin.site.register(models.Media)
-admin.site.register(models.Publisher)
+@admin.register(models.Media)
+class MediaAdmin(admin.ModelAdmin):
+    exclude = ['created', 'last_modified']
+    list_display = ['title', 'release', 'verdict', 'publisher', 'last_modified']
+
+
+@admin.register(models.Publisher)
+class PublisherAdmin(admin.ModelAdmin):
+    exclude = ['created', 'last_modified']
+    list_display = ['name', 'last_modified']
